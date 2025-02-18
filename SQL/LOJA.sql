@@ -49,7 +49,7 @@ GROUP BY c.id_cliente;
 
 
 
-
+-- O código cria um banco de dados chamado 'LOJA' com duas tabelas principais: 'Clientes' e 'Pedidos'. A tabela 'Clientes' contém informações sobre os clientes (id_cliente e nome), enquanto a tabela 'Pedidos' armazena os pedidos realizados, com referência à tabela 'Clientes' através do campo id_cliente. Após a criação das tabelas, são inseridos dados de exemplo. Em seguida, são feitas três consultas para exibir informações dos pedidos, incluindo o nome do cliente associado ao pedido, a lista de todos os clientes e seus pedidos, e a contagem do número de pedidos por cliente. A estrutura de relacionamento entre as tabelas é garantida por meio de chaves primárias e estrangeiras.
 
 
 
