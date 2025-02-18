@@ -32,4 +32,7 @@ VALUES
 ('Rua B', 456, 2),  -- Endereço de Maria Souza
 ('Rua C', 789, 3);  -- Endereço de Carlos Lima
 
+SELECT p.id, p.nome, p.nacionalidade, e.rua, e.numero
+FROM Pessoa p
+JOIN Endereco e ON p.id = e.pessoa_id;
 
