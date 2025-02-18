@@ -19,4 +19,17 @@ CREATE TABLE Endereco (
 );
 
 
+INSERT INTO Pessoa (nome, nacionalidade) 
+VALUES 
+('João Silva', 'Brasileiro'),
+('Maria Souza', 'Portuguesa'),
+('Carlos Lima', 'Brasileiro');
+
+
+INSERT INTO Endereco (rua, numero, pessoa_id) 
+VALUES 
+('Rua A', 123, 1),  -- Endereço de João Silva
+('Rua B', 456, 2),  -- Endereço de Maria Souza
+('Rua C', 789, 3);  -- Endereço de Carlos Lima
+
 
