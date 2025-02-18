@@ -36,3 +36,6 @@ SELECT p.id, p.nome, p.nacionalidade, e.rua, e.numero
 FROM Pessoa p
 JOIN Endereco e ON p.id = e.pessoa_id;
 
+-- Este código cria um banco de dados chamado "JoinAula", define duas tabelas: "Pessoa" (contendo informações sobre pessoas, como nome e nacionalidade) e "Endereco" (armazenando dados de endereço com uma chave estrangeira que referencia a tabela Pessoa). Em seguida, são inseridos dados nas duas tabelas e, por fim, é realizada uma consulta que utiliza um "JOIN" entre as tabelas para retornar informações combinadas de pessoas e seus respectivos endereços.
+
+
