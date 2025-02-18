@@ -34,6 +34,22 @@ INSERT INTO Pedidos (id_cliente, data_pedido) VALUES
 (6, '2025-03-19');  -- Fernanda
 
 
+SELECT p.id_pedido, c.nome
+FROM Pedidos p
+JOIN Clientes c ON p.id_cliente = c.id_cliente;
+
+SELECT c.nome, p.id_pedido
+FROM Clientes c
+LEFT JOIN Pedidos p ON c.id_cliente = p.id_cliente;
+
+SELECT c.nome, COUNT(p.id_pedido) AS numero_de_pedidos
+FROM Clientes c
+LEFT JOIN Pedidos p ON c.id_cliente = p.id_cliente
+GROUP BY c.id_cliente;
+
+
+
+
 
 
 
