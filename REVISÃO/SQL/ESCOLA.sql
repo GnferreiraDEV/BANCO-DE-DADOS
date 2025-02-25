@@ -81,6 +81,35 @@ VALUES
 (4, 8.5, '2025-02-28');
 
 
+SELECT * FROM Aluno;
+
+SELECT Curso.nome AS curso, Professor.nome AS professor
+FROM Curso
+JOIN Professor ON Curso.id_professor = Professor.id_professor;
+
+SELECT Aluno.nome
+FROM Aluno
+JOIN Matricula ON Aluno.id_aluno = Matricula.id_aluno
+JOIN Curso ON Matricula.id_curso = Curso.id_curso
+WHERE Curso.nome = 'Banco de Dados';
+
+SELECT Curso.nome AS curso, COUNT(Matricula.id_aluno) AS total_alunos
+FROM Curso
+JOIN Matricula ON Curso.id_curso = Matricula.id_curso
+GROUP BY Curso.id_curso;
+
+SELECT Curso.nome AS curso, AVG(Avaliacao.nota) AS media_notas
+FROM Curso
+JOIN Matricula ON Curso.id_curso = Matricula.id_curso
+JOIN Avaliacao ON Matricula.id_matricula = Avaliacao.id_matricula
+GROUP BY Curso.id_curso
+HAVING Curso.nome = 'Banco de Dados';
+
+SELECT Aluno.nome
+FROM Aluno
+JOIN Matricula ON Aluno.id_aluno = Matricula.id_aluno
+LEFT JOIN Avaliacao ON Matricula.id_matricula = Avaliacao.id_matricula
+WHERE Avaliacao.nota IS NULL;
 
 
 
