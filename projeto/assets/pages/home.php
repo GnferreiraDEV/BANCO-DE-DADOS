@@ -7,6 +7,5 @@
     ?>
 
 
-    
+<a href="/assets/pages/catalogo.php">CATALOGO</a>
 
-    
