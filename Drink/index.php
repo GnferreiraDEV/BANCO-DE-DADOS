@@ -45,6 +45,14 @@
                 include("pages/lista/listadedrinks.php");
                 break;
 
+            case 'adicionardrink';
+                include("pages/lista/adicionardrink.php");
+                break;
+
+            case 'dbAdicionarDrinks';
+                include("pages/lista/dbAdicionarDrinks.php");
+                break;
+
             default;
                 include("pages/home/home.php");
                 break;

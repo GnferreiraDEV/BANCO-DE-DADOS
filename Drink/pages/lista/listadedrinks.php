@@ -5,47 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
     <title>Lista de Drinks</title>
-   
-       
-    
 </head>
 <body>
 
-<h1>VOCÊ ESTÁ NA LISTA DE DRINKS</h1>
+    <header>
+        <nav>
+            <a href="index.php?menu=adicionardrink">
+               <button type="button">ADICIONAR DRINK</button>
+            </a>
+        </nav>
+    </header>
 
-<table>
-    <tr>
-        <th>Imagem</th>
-        <th>Nome</th>
-        <th>Descrição</th>
-        <th>Categoria</th>
-        <th>Tem Álcool?</th>
-    </tr>
+    <h1>VOCÊ ESTÁ NA LISTA DE DRINKS</h1>
 
-    <?php
-    // Certifique-se de que a conexão com o banco está funcionando antes
-    $sql = "SELECT * FROM drinks";
-    $query = mysqli_query($conexao, $sql) or die("ERRO NA REQUISIÇÃO! " . mysqli_error($conexao));
+    <table>
+        <tr>
+            <th>Imagem</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Categoria</th>
+            <th>Tem Álcool?</th>
+            <th>Valor</th>
+        </tr>
 
-    while ($dados = mysqli_fetch_assoc($query)) {
+        <?php
+        
+        $sql = "SELECT * FROM drinks";
+        $query = mysqli_query($conexao, $sql) or die("ERRO NA REQUISIÇÃO! " . mysqli_error($conexao));
+
+        while ($dados = mysqli_fetch_assoc($query)) {
         ?>
 
         <tr>
             <td>
-                <?php if (!empty($dados['image'])) { ?>
-                    <img src="<?= $dados['image']; ?>" alt="Drink">
+                <?php if (!empty($dados['imagem'])) { ?>
+                    <img src="<?= $dados['imagem']; ?>" alt="Drink">
                 <?php } else { ?>
                     <img src="sem-imagem.jpg" alt="Sem Imagem">
                 <?php } ?>
             </td>
             <td><?= $dados['nome'] ?></td>
-            <td><?= $dados['descrição'] ?></td>
+            <td><?= $dados['descricao'] ?></td>
             <td><?= $dados['categoria'] ?></td>
             <td><?= $dados['tem_alcool'] ? 'Sim' : 'Não' ?></td>
+            <td>R$ <?= number_format($dados['valor'], 2, ',', '.') ?></td>
         </tr>
 
-    <?php } ?>
-</table>
+        <?php } ?>
+    </table>
 
 </body>
 </html>
