@@ -15,7 +15,7 @@ if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] == 0) {
     $arquivo_temporario = $_FILES['imagem']['tmp_name'];
    
     $nome_arquivo = basename($_FILES['imagem']['name']);
-    $caminho_imagem = $diretorio . $nome_arquivo;
+    $caminho_imagem = $diretorio . $nome_arquivo;;;;
 
     
     if (move_uploaded_file($arquivo_temporario, $caminho_imagem)) {
